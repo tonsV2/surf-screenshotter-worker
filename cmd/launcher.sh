@@ -1,6 +1,6 @@
 #! /bin/sh
 
-while sleep 1s; do
-	echo $(./screenshots.sh)
+while sleep 60m; do
+	./screenshotter.sh
 done
 
