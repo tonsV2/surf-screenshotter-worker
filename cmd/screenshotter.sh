@@ -13,6 +13,7 @@ while read line; do
   cmd="$PAGERES $1 $2 --selector=$3 --filename=$4"
   eval $cmd
   echo "Posting screenshot: $4"
+  echo $(date)
   curl -F "secret_key=$SECRET_KEY" -F "filename=$4.png" -F payload=@$4.png $POST_URL && rm $4.png
 done < $DATA_FILE
 
