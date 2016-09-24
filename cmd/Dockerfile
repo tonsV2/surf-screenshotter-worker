@@ -1,8 +1,10 @@
 
 FROM node:4
-WORKDIR /app
-ADD cmd/screenshots.sh .
-ADD cmd/launch.sh .
+RUN useradd -ms /bin/bash me
+WORKDIR /home/me
+ADD cmd/screenshotter.sh .
+ADD cmd/launcher.sh .
 RUN npm install pageres-cli
-ENTRYPOINT ["launcher.sh"]
+USER me
+ENTRYPOINT ["./launcher.sh", ">", "./screenshotter.log"]
 

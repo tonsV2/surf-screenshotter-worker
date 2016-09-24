@@ -1,0 +1,1 @@
+sudo docker stop screenshotter && sudo docker rm screenshotter && sudo docker build -t surf/screenshotter . && sudo docker run --name screenshotter -d surf/screenshotter && sudo docker exec -i -t screenshotter bash
