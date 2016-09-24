@@ -4,7 +4,7 @@ $target_dir = "uploads/";
 $target_file = "";
 $MAX_SIZE = 500000 * 2;
 // This needs to match the value found in the client script
-$SECRET_KEY="a40f4738-758f-11e4-9649-7845c4be5139";
+$SECRET_KEY="1a7adef0-9d3c-4fae-b1ea-10c3957fa1fb";
 
 if($_POST["secret_key"] != $SECRET_KEY) {
 	http_response_code(403);

@@ -1,16 +1,20 @@
 #! /bin/sh
 
-SECRET_KEY=a40f4738-758f-11e4-9649-7845c4be5139
+DATA_URL=https://www.dropbox.com/s/vqbuepllotx9hkl/Surf.txt
+SECRET_KEY=1a7adef0-9d3c-4fae-b1ea-10c3957fa1fb
 POST_URL=http://screenshots.surfstation.dk/upload.php
+PAGERES=~/node_modules/.bin/pageres
+DATA_FILE=data_file.txt
 
-wget https://www.dropbox.com/s/vqbuepllotx9hkl/Surf.txt
+curl -L $DATA_URL -o $DATA_FILE
 
 while read line; do
   set -- $line
-  cmd="~/node_modules/.bin/pageres $1 $2 --selector=$3 --filename=$4"
+  cmd="$PAGERES $1 $2 --selector=$3 --filename=$4"
   eval $cmd
-  curl --silent -F "secret_key=$SECRET_KEY" -F "filename=$4.png" -F payload=@$4.png $POST_URL && rm $4.png
-done < Surf.txt
+  echo "Posting screenshot: $4"
+  curl -F "secret_key=$SECRET_KEY" -F "filename=$4.png" -F payload=@$4.png $POST_URL && rm $4.png
+done < $DATA_FILE
 
-rm Surf.txt
+rm $DATA_FILE
 
