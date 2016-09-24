@@ -1,7 +1,8 @@
 FROM php:7.0-apache
-COPY upload.php /var/www/html/
-RUN mkdir /var/www/html/uploads
-COPY htaccess /var/www/html/uploads/.htaccess
-RUN chown www-data /var/www/html/uploads
+WORKDIR /var/www/html/
+COPY upload.php .
+RUN mkdir uploads
+COPY htaccess uploads/.htaccess
+RUN chown www-data uploads
 EXPOSE 80
 
