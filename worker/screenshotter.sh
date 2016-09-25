@@ -2,7 +2,10 @@
 
 DATA_URL=https://www.dropbox.com/s/gb9qn9o1nik767r/screenshotkonfig.txt
 SECRET_KEY=1a7adef0-9d3c-4fae-b1ea-10c3957fa1fb
-POST_URL=http://screenshotter-http/upload.php
+#POST_URL=http://screenshotter-http/upload.php
+#POST_URL=http://screenshots.surfstation.dk/upload.php
+# www need to match what's in docker-compose.yml
+POST_URL=http://www/upload.php
 PAGERES=./node_modules/.bin/pageres
 DATA_FILE=data_file.txt
 
