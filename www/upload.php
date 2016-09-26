@@ -19,6 +19,11 @@
 		$target_file = $target_dir . $_POST["filename"];
 	}
 
+// Confirm that $target_dir exists
+	if(!is_dir($target_dir)) {
+		mkdir($target_dir);
+	}
+
 // Delete file if it already exists
 	if(file_exists($target_file)) {
 		unlink($target_file);

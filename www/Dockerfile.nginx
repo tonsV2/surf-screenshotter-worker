@@ -1,0 +1,8 @@
+FROM richarvey/nginx-php-fpm
+WORKDIR /var/www/html/
+COPY upload.php .
+#RUN mkdir uploads
+#COPY htaccess uploads/.htaccess
+#RUN chown nobody uploads
+EXPOSE 80
+
