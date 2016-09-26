@@ -2,10 +2,13 @@ version: '2'
 services:
   www:
     build: www
-    ports:
-     - "80:80"
+    container_name: surf-screenshotter-www
   worker:
     build: worker
+    container_name: surf-screenshotter-worker
     depends_on:
      - www
+    links:
+     - www
+
 
