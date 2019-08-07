@@ -1,5 +1,4 @@
-
-FROM node:4
+FROM node:8
 RUN useradd -ms /bin/bash me
 WORKDIR /home/me
 ADD launcher.sh .

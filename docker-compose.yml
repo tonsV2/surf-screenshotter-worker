@@ -4,6 +4,7 @@ services:
     build: www
     container_name: surf-screenshotter-www
   worker:
+    image: tons/surf-screenshotter-worker
     build: worker
     container_name: surf-screenshotter-worker
     depends_on:

@@ -10,7 +10,6 @@ PAGERES=./node_modules/.bin/pageres
 DATA_FILE=data_file.txt
 
 curl -L $DATA_URL -o $DATA_FILE
-#cat $DATA_FILE
 
 while read line; do
   set -- $line
