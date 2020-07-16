@@ -13,7 +13,8 @@ curl -L $DATA_URL -o $DATA_FILE
 
 while read line; do
   set -- $line
-  cmd="$PAGERES $1 $2 --selector=$3 --filename=$4 --cookie '$5'"
+  cmd="$PAGERES $1 $2 --selector=$3 --filename=$4 --hide='$5' --cookie '$6'"
+  echo $cmd
   eval $cmd
   echo "Posting screenshot: $4"
   curl -F "secret_key=$SECRET_KEY" -F "filename=$4.png" -F payload=@$4.png $POST_URL
