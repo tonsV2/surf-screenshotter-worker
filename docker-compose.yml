@@ -4,12 +4,9 @@ services:
     build: www
     container_name: surf-screenshotter-www
   worker:
+    cap_add:
+     - SYS_ADMIN
     image: tons/surf-screenshotter-worker
     build: worker
     container_name: surf-screenshotter-worker
-    depends_on:
-     - www
-    links:
-     - www
-
 
