@@ -13,5 +13,3 @@ while read line; do
   mv $4.png /data/uploads
 done < $DATA_FILE
 
-rm $DATA_FILE
-
