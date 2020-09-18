@@ -10,5 +10,5 @@ services:
     build: worker
     container_name: surf-screenshotter-worker
     volumes:
-      - "./data_file.txt:/mnt/data/data_file.txt"
+      - "./data_file.txt:/mnt/data/data_file.txt:ro"
 
