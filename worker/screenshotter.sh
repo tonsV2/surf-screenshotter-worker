@@ -1,11 +1,8 @@
 #! /bin/sh
 
-DATA_URL=https://www.dropbox.com/s/l251zkduw52yrm2/screenshotconfig.txt?dl=0
-#DATA_URL=http://screenshots.surfstation.dk/configuration/screenshotconfig.txt
+DATA_FILE=./data_file.txt
 PAGERES=/node_modules/.bin/pageres
-DATA_FILE=data_file.txt
 
-curl -L $DATA_URL -o $DATA_FILE
 mkdir -p /data/uploads
 
 while read line; do

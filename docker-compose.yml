@@ -9,4 +9,6 @@ services:
     image: "tons/surf-screenshotter-worker:0.3"
     build: worker
     container_name: surf-screenshotter-worker
+    volumes:
+      - "./data_file.txt:/home/me/data_file.txt"
 
