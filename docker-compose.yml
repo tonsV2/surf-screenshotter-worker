@@ -6,9 +6,9 @@ services:
   worker:
     cap_add:
      - SYS_ADMIN
-    image: "tons/surf-screenshotter-worker:0.3"
+    image: "tons/surf-screenshotter-worker:0.4"
     build: worker
     container_name: surf-screenshotter-worker
     volumes:
-      - "./data_file.txt:/home/me/data_file.txt"
+      - "./data_file.txt:/mnt/data/data_file.txt"
 
