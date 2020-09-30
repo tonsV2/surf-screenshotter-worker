@@ -1,14 +1,10 @@
 version: '3'
 services:
-  www:
-    build: www
-    container_name: surf-screenshotter-www
   worker:
     cap_add:
-     - SYS_ADMIN
-    image: "tons/surf-screenshotter-worker:0.5"
-    build: worker
+      - SYS_ADMIN
+    image: "tons/surf-screenshotter-worker:0.6"
+    build: .
     container_name: surf-screenshotter-worker
     volumes:
       - "./data_file.txt:/mnt/data/data_file.txt:ro"
-

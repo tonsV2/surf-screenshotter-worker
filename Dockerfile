@@ -5,8 +5,6 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
 RUN npm install pageres-cli@5.0.0
 WORKDIR /home/me
-ADD launcher.sh .
-ADD screenshotter.sh .
+ADD scripts/ .
 USER me
-ENTRYPOINT ["./launcher.sh", ">", "./screenshotter.log"]
-
+CMD exec ./launcher.sh
