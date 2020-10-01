@@ -7,4 +7,4 @@ RUN npm install pageres-cli@5.0.0
 WORKDIR /home/me
 ADD scripts/ .
 USER me
-CMD exec ./launcher.sh
+CMD exec ./screenshotter.sh
