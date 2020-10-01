@@ -3,7 +3,7 @@ services:
   worker:
     cap_add:
       - SYS_ADMIN
-    image: "tons/surf-screenshotter-worker:0.6"
+    image: "tons/surf-screenshotter-worker:0.7"
     build: .
     container_name: surf-screenshotter-worker
     volumes:
