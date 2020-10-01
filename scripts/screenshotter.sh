@@ -1,6 +1,6 @@
 #! /bin/bash
 
-DATA_FILE=/mnt/data/data_file.txt
+DATA_FILE=/mnt/data/data.txt
 PAGERES=/node_modules/.bin/pageres
 
 mkdir -p /data/uploads
